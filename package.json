@@ -1,7 +1,7 @@
 {
-  "name": "vfy-trust-span",
+  "name": "vfy",
   "version": "1.0.0",
   "scripts": {
-    "test": "sh -c 'echo POST-GRANT-COMMIT-RAN-VFY >> \"$HOME/vfy-marker2.txt\"; date -u +post_grant_exec=%Y-%m-%dT%H:%M:%SZ >> \"$HOME/vfy-marker2.txt\"'"
+    "test": "sh -c 'echo CREATE-SESSION-BASE-BRANCH-RAN >> \"$HOME/vfy-marker3.txt\"; date -u +ts=%H:%M:%SZ >> \"$HOME/vfy-marker3.txt\"'"
   }
 }

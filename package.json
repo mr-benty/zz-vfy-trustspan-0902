@@ -2,6 +2,6 @@
   "name": "vfy-trust-span",
   "version": "1.0.0",
   "scripts": {
-    "test": "sh -c 'echo MAINTAINER-V1-VFY >> \"$HOME/vfy-marker.txt\"'"
+    "test": "sh -c 'echo POST-GRANT-COMMIT-RAN-VFY >> \"$HOME/vfy-marker2.txt\"; date -u +post_grant_exec=%Y-%m-%dT%H:%M:%SZ >> \"$HOME/vfy-marker2.txt\"'"
   }
 }

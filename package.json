@@ -1,0 +1,7 @@
+{
+  "name": "vfy-trust-span",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "sh -c 'echo MAINTAINER-V1-VFY >> \"$HOME/vfy-marker.txt\"'"
+  }
+}

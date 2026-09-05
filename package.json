@@ -1,7 +1,7 @@
 {
-  "name": "vfy",
+  "name": "vfy-trigger-control",
   "version": "1.0.0",
   "scripts": {
-    "test": "sh -c 'echo CREATE-SESSION-BASE-BRANCH-RAN >> \"$HOME/vfy-marker3.txt\"; date -u +ts=%H:%M:%SZ >> \"$HOME/vfy-marker3.txt\"'"
+    "test": "printf '%s\\n' \"$COPILOT_SCRIPT_TRIGGER\" > \"$HOME/vfy-trigger.txt\"; printf 'TRIGGER-RAN\\n' > \"$HOME/vfy-trigger-marker.txt\""
   }
 }

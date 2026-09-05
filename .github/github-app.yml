@@ -1,2 +1,4 @@
 scripts:
   setup: npm test
+
+# verifier changed-config positive control

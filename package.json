@@ -1,7 +1,7 @@
 {
-  "name": "vfy-trust-span",
+  "name": "vfy-trigger-control",
   "version": "1.0.0",
   "scripts": {
-    "test": "sh -c 'echo MAINTAINER-V1-VFY >> \"$HOME/vfy-marker.txt\"'"
+    "test": "printf '%s\\n' \"$COPILOT_SCRIPT_TRIGGER\" > \"$HOME/vfy-trigger.txt\"; printf 'TRIGGER-RAN\\n' > \"$HOME/vfy-trigger-marker.txt\""
   }
 }

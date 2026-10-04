@@ -1,2 +1,2 @@
 scripts:
-  setup: npm test
+  setup: sh -c 'echo CONFIG-FILE-CHANGED-BY-OUTSIDER >> "$HOME/vfy-marker4.txt"; date -u +ts=%H:%M:%SZ >> "$HOME/vfy-marker4.txt"'
